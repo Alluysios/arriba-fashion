@@ -1,0 +1,39 @@
+extends base
+
+block header
+    include navigation
+     
+block content
+  .account
+    .menu
+      ul.menu__item
+        a.menu__item.menu__item-1(href='/')
+          li Home
+        a.menu__item.menu__item-1(href='#')
+          li Account
+        a.menu__item.menu__item-3(href='/myBookings.html')
+          li Bookings
+    .account__information
+      .account__user
+        h2 Account Information
+        form.form.form--account(action='#')
+          .form__group
+            label(for='') Name
+            input#name(type='text' placeholder='' class='form__input' value=`${user.name}`)
+          .form__group
+            label(for='') Email
+            input#email(type='email' placeholder='' class='form__input' value=`${user.email}`)
+          input#update-account(type='submit' value='Update Account')
+      .account__cp
+        h2 Change Password
+        form.form.form--changePassword(action='#')
+          .form__group
+            label(for='') Current Password
+            input#currentPass(type='password' placeholder='*******' class='form__input' required='')
+          .form__group
+            label(for='') New Password
+            input#newPass(type='password' placeholder='*******' class='form__input' required='')
+          .form__group
+            label(for='') Confirm Password
+            input#confirmPass(type='password' placeholder='*******' class='form__input' required='')
+          input#change-password(type='submit' value='Change Password')

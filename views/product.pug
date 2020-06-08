@@ -1,0 +1,44 @@
+doctype html
+html
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1.0')
+        title Arriba House of Fashion
+        link(rel='stylesheet' href='/css/style.css')
+        script(src='https://js.stripe.com/v3/')
+    body
+      include navigation
+      .review
+        form.form.form--review.hide#formReview(action='#')
+          .form__group
+            label.form__label(for='') How do you like this product?
+            textarea#review(rows='15', form='formReview')
+          .form__group
+            label.form__label(for='') Rating
+            input#rating(type='number' min=1, max=5)
+          input#pid(type="hidden" value=`${product._id}`)
+          input.form__btn(type='submit' value='Write review')
+      .product
+        .product__imgbox
+          a.product__backbtn(href='../') &larr;
+          img.product__highlight(src=`/img/products/${product.image}` alt='')
+        .product__info
+          .product__dbox
+            h2.heading-secondary= product.name
+            span.product__description= product.description
+            .product__imgs
+              img.product__highlight(src=`/img/products/${product.image}` alt='')
+              each img in product.images
+                img(src=`/img/products/${img}` alt='')
+            button.btn.btn-black.bold.product__btn#buy-product(data-product-id=`${product._id}`) BUY!
+          .product__rbox
+          a#writeReview(href="#") write review!
+          .product__userreview
+            each review in product.review
+              .divider
+                span.product__rating= review.rating.toFixed(1)
+                span.product__review= review.review
+
+
+    script(src="/js/bundle.js")
+        

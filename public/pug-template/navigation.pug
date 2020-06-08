@@ -1,0 +1,29 @@
+nav.nav
+  .nav__logo
+    a(href='#') Arriba House of Fashion
+  ul.nav__menu
+    a.nav__item(href='#')
+      li.nav__list Wedding Gowns
+    a.nav__item(href='#')
+      li.nav__list Dress
+    a.nav__item(href='#')
+      li.nav__list Sale
+  .nav__user
+    //- LOGGED OUT USER
+    .nav__login
+      a#login(href='#') Login
+      form.form.form__login.hide(action='#')
+        .form__container
+          .form__group
+            label.form__label(for='') Email
+            input.form__input(type='text')
+          .form__group
+            label.form__label(for='') Password
+            input.form__input(type='text')
+          input.form__btn(type='submit')
+    a#signIn(href='#') Sign Up
+    //- LOGGED IN USER
+    //-
+      <img src="img/default.jpg" alt="default user" class='nav__userimage'>
+      <a href='#' class='nav__username'>Alluysios Arriba</a>
+      <a href="#" id='logout'>Logout</a>

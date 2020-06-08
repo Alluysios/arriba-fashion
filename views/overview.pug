@@ -1,0 +1,31 @@
+extends base
+
+block content
+  section.section.products
+    h2.heading-secondary.text-center Featured
+    .products__container
+      each product in products
+        if product.featured
+          .products__item
+            .products__image
+              a(href=`/product/${product.slug}`)
+                img(src=`img/products/${product.image}` alt='')
+            span.products__name= product.name
+            span.products__price= `from $${product.price}`
+  section.section.popular
+    .popular__bg
+      img(src='img/bg.jpg' alt='')
+    .popular__description
+      h2.heading-secondary SEWING AND ALTERATIONS. BOOK YOUR APPOINTMENT NOW!
+      a.btn.bold.popular__btn(href='/book') BOOK APPOINTMENT
+  section.section.products.sale
+    h2.heading-secondary.text-center Sale
+    .products__container
+      each product in products
+        if !product.featured
+          .products__item
+            .products__image
+              a(href=`/product/${product.slug}`)
+                img(src=`img/products/${product.image}` alt='')
+            span.products__name= product.name
+            span.products__price= `from $${product.price}`

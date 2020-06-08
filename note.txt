@@ -1,0 +1,18 @@
+MAY 27, 2020
+    - Error Handling
+
+TODO: MAY 28, 2020 - FINISHED
+    - User model, route and controllers all set up
+
+    goal: 
+        set up authentications
+        need to review nested routes
+
+TODO: JUNE 1, 2020
+
+    - Review viewController, viewRoutes, Pug files
+
+    goal:
+        understand parcel
+        set create product
+        login and logout

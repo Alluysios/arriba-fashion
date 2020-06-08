@@ -1,0 +1,19 @@
+extends base
+
+block header
+    include navigation
+
+block content
+    .email
+        form.form.form__login.form--email
+            .form__container
+                .form__group
+                    -
+                        const today = new Date().toISOString().split('T')[0];
+                    label.form__label(for='Date') Date
+                    input#bookDate(type='date', min=`${today}` required)
+                .form__group
+                    label.form__label(for='') Is there anything you want us to know?
+                    textarea#message(rows='15', form='formReview' value='')
+                .form__group
+                    input.form__btn#book(type='submit', value='BOOK!')
