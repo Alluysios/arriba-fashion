@@ -18,6 +18,4 @@ export const sendEmail = async(bookDate, message) => {
     } catch(err) {
         console.log(err.response.data.message);
     }
-   
-
 }

@@ -34,7 +34,6 @@ class APIFeatures {
 
     limitFields() {
         if(this.queryString.field) {
-            console.log(this.queryString.field);
             const fields = this.queryString.field.split(',').join(' ');
             this.query.select(fields);
         } else {

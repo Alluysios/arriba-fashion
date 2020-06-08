@@ -11,8 +11,6 @@ const sendEmail = async options => {
             pass: process.env.EMAIL_PASSWORD
         }
     })
-    console.log(options.data.message, 'message');
-    console.log(options.data.bookDate, 'from book date');
     // 2) Define email options
     const mailOptions = {
         from: `Arriba House of Fashion ${options.email}`,
