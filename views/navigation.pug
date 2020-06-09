@@ -1,47 +1,48 @@
 nav.nav
   .nav__logo
     a(href='/') Arriba House of Fashion
-  ul.nav__menu
-    a.nav__item(href='/shop')
-      li.nav__list All
-    a.nav__item(href='/shop?category=gown')
-      li.nav__list Wedding Gowns
-    a.nav__item(href='/shop?category=dress')
-      li.nav__list Dress
-  .nav__user
-    //- LOGGED OUT USER
-    
-    if user
-      img.nav__userimage(src='img/default.jpg', alt='user photo')
-      a.nav__username(href='/myAccount')= user.name
-      a#logout Logout
-    else
-      .nav__login
-        a#login(href='#') Login
-        form.form.form__dropdown.form__login.form--login.hide
-          .form__container
+  a.menu-icon-dropdown(href='#menu')
+    .menu-icon
+    ul.nav__menu.hide-dropdown
+      a.nav__item(href='/shop')
+        li.nav__list All
+      a.nav__item(href='/shop?category=gown')
+        li.nav__list Wedding Gowns
+      a.nav__item(href='/shop?category=dress')
+        li.nav__list Dress
+    .nav__user.hide-dropdown
+      //- LOGGED OUT USER
+      if user
+        img.nav__userimage(src='img/default.jpg', alt='user photo')
+        a.nav__username(href='/myAccount')= user.name
+        a#logout Logout
+      else
+        .nav__login
+          a#login(href='#') Login
+          form.form.form__dropdown.form__login.form--login.hide
+            .form__container
               .form__group
-                  label.form__label(for='email') Email
-                  input.form__input#email(type='text', required)
+                label.form__label(for='email') Email
+                input#email.form__input(type='text' required='required')
               .form__group
-                  label.form__label(for='password') Password
-                  input.form__input#password(type='password', required)
+                label.form__label(for='password') Password
+                input#password.form__input(type='password' required='required')
               .form__group
-                  input.form__btn#login(type='submit', value='Login')
-        a#signUp(href='#') Sign Up
-        form.form.form__dropdown.form__login.form--signUp.hide
-          .form__container
+                input#login.form__btn(type='submit' value='Login')
+          a#signUp(href='#') Sign Up
+          form.form.form__dropdown.form__login.form--signUp.hide
+            .form__container
               .form__group
-                  label.form__label(for='name')  Name
-                  input.form__input#userName(type='text', required)
+                label.form__label(for='name')  Name
+                input#userName.form__input(type='text' required='required')
               .form__group
-                  label.form__label(for='email') Email
-                  input.form__input#userEmail(type='text', required)
+                label.form__label(for='email') Email
+                input#userEmail.form__input(type='text' required='required')
               .form__group
-                  label.form__label(for='password') Password
-                  input.form__input#userPassword(type='password', required)
+                label.form__label(for='password') Password
+                input#userPassword.form__input(type='password' required='required')
               .form__group
-                  label.form__label(for='passwordConfirm') Password Confirm
-                  input.form__input#userPasswordConfirm(type='password', required)
+                label.form__label(for='passwordConfirm') Password Confirm
+                input#userPasswordConfirm.form__input(type='password' required='required')
               .form__group
-                  input.form__btn#signUp(type='submit', value='Create Account')
+                input#signUp.form__btn(type='submit' value='Create Account')

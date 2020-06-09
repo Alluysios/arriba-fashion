@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+const buyBtn = document.getElementById('buy-product');
+
 const stripe = Stripe('pk_test_51GqOZ0Gxi8h3WIFqOIoNNPPgXOmLCD941IYNfbBV01pqc5OX9Lvrb2bYf2Z0XHJWECJO6bWjzqZrPMDhyeeUnkvE00CJIzzE7X');
 
 export const purchaseProduct = async productId => {
@@ -15,6 +17,7 @@ export const purchaseProduct = async productId => {
             sessionId: session.data.session.id
         })
     } catch(err) {
+        buyBtn.textContent = 'BUY!'
         alert(err.response.data.message);
     }
 

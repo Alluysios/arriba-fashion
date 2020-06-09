@@ -19,6 +19,8 @@ const productImgs = document.querySelector('.product__imgs');
 const productHighlight = document.querySelector('.product__highlight');
 
 const buyBtn = document.getElementById('buy-product');
+// DROPDOWN NAVIGATION
+const dropdownBtn = document.querySelector('.menu-icon-dropdown');
 
 //REVIEW
 const writeReviewBtn = document.getElementById('writeReview');
@@ -165,3 +167,10 @@ if(changePassForm) {
         updateMyPassword(currentPass, newPass, confirmPass);
     })
 }
+
+// DROPDOWN NAVIGATION
+dropdownBtn.addEventListener('click', e => {
+    e.preventDefault();
+    document.querySelector('.nav__menu').classList.toggle('hide-dropdown');
+    document.querySelector('.nav__user').classList.toggle('hide-dropdown');
+})

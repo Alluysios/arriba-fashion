@@ -1,21 +1,16 @@
-doctype html
-html
-    head
-        meta(charset='UTF-8')
-        meta(name='viewport' content='width=device-width, initial-scale=1.0')
-        title Arriba House of Fashion
-        link(rel='stylesheet' href='css/style.css')
+extends base
 
-    body
-      include navigation
-      section.section.products.sale
-        h2.heading-secondary.text-center= title
-        .products__container
-          each product in products
-            .products__item
-              .products__image
-                a(href=`/product/${product.slug}`)
-                  img(src=`img/products/${product.image}` alt='')
-              span.products__name= product.name
-              span.products__price= `from $${product.price}`
-      include _footer
+block header
+  include navigation
+
+block content
+  section.section.products.sale
+    h2.heading-secondary.text-center= title
+    .products__container
+      each product in products
+        .products__item
+          .products__image
+            a(href=`/product/${product.slug}`)
+              img(src=`img/products/${product.image}` alt='')
+          span.products__name= product.name
+          span.products__price= `from $${product.price}`
